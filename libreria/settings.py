@@ -122,3 +122,5 @@ STATIC_URL = "static/"
 LOGIN_REDIRECT_URL = '/libri/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_URL = '/accounts/login/'
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField" #bash pythonanywhere dava questo problema e suggeriva questa soluzione per fixare :)
