@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-8rfl_9uar&#seasw6q-)q0bn7qnds8n1$xzf#e@l@%jeh=y^ef"
+SECRET_KEY = "v97RqaEwZYq4yzXykBepaerFlk9BscbE9gOLutiLGsa4pJRQL__3i2VlpgyYKa77XPA3qR2B1bj1SoouLxhS6w"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["UseOfLife.pythonanywhere.com"]
 
 
 # Application definition
@@ -124,3 +124,10 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_URL = '/accounts/login/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField" #bash pythonanywhere dava questo problema e suggeriva questa soluzione per fixare :)
+
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_PRELOAD = True
