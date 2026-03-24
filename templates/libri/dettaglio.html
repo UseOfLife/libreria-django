@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titolo %}{{ libro.titolo }}{% endblock %}
+
+{% block contenuto %}
+  <h1>{{ libro.titolo }}</h1>
+  <p><strong>Autore:</strong> {{ libro.autore }}</p>
+  <p><strong>Prezzo:</strong> {{ libro.prezzo }} €</p>
+
+  <p><strong>Disponibile:</strong> {{ libro.disponibile|yesno:"Sì,No" }}</p>
+
+  <p>{{ libro.descrizione }}</p>
+
+  <a href="{% url 'lista_libri' %}">Torna al catalogo</a>
+{% endblock %}

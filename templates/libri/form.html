@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block titolo %}{{ azione }}{% endblock %} 
+{% block contenuto %}
+<h1>{{ azione }}</h1>
+
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Salva</button>
+  <a href="{% url 'lista_libri' %}">Annulla</a>
+</form>
+{% endblock %}

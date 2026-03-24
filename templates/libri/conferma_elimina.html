@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block contenuto %}
+<h1>Elimina libro</h1>
+<p>Sei sicuro di voler eliminare <strong>{{ libro.titolo }}</strong>?</p>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <button type="submit">Sì, elimina</button>
+  <a href="{% url 'lista_libri' %}">Annulla</a>
+</form>
+{% endblock %}
