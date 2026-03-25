@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Monoton&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+body {
+    background-color: rgb(164, 230, 250);
+    color: rgb(0, 0, 0);
+    font-family: "Lakki Reddy", serif;
+    font-size: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 96, 45);
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+button[type="submit"] {
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: bisque;
+    cursor: cell;
+}

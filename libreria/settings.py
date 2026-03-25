@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "v97RqaEwZYq4yzXykBepaerFlk9BscbE9gOLutiLGsa4pJRQL__3i2VlpgyYKa77XPA3qR2B1bj1SoouLxhS6w"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["UseOfLife.pythonanywhere.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -118,6 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / 'static'] 
 
 LOGIN_REDIRECT_URL = '/libri/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
@@ -125,9 +126,9 @@ LOGIN_URL = '/accounts/login/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField" #bash pythonanywhere dava questo problema e suggeriva questa soluzione per fixare :)
 
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_HSTS_PRELOAD = False

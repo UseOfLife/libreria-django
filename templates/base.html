@@ -2,33 +2,28 @@
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>{% block titolo %}Libreria{% endblock %}</title>
   </head>
   <body>
     <nav>
       <a href="/libri/">Catalogo</a>
 
-      {% if user.is_authenticated %} | Ciao, {{ user.username }}! 
-      {% if user.is_authenticated %} | <a href="{% url 'aggiungi_libro' %}">Aggiungi libro</a>
-      <!-- dovesse esserci bisogno di avere funzioni crud ( inquesto caso) solo superuser mettere : "is_staff"
-       senno lasciare così anche se il check è inutile.
-       Ovvio dopo tocca cambiare ilp annello admin che sta su libri\views e mettere tipo:
-       funzione staff che prende l'uutente come parametro e ti fa un check se è superuser per far partire la roba,
-       opzioni trovate:decoratore @user_passes_test(fuzione), senno classico check booleano nella row del db ma più lento e un po nammerda.
-       per ora lascia cosi che funiona
-       -->
-
-      {% endif %} | <a href="{% url 'logout' %}">Esci</a>
+      {% if user.is_authenticated %} <p>Ciao, {{ user.username }}!</p>  
+       | <a href="{% url 'aggiungi_libro' %}">Aggiungi libro</a>
+      
+      <a href="{% url 'logout' %}">Esci</a>
 
       {% else %}
 
-      <a href="{% url 'login' %}">Accedi</a> | <a href="{% url 'registrazione' %}">Registrati</a>
+      <a href="{% url 'login' %}">Accedi</a> 
+      <a href="{% url 'registrazione' %}">Registrati</a>
 
       {% endif %}
     </nav>
 
     <hr />
-
     <main>{% block contenuto %}{% endblock %}</main>
   </body>
 </html>
