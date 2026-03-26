@@ -2,9 +2,14 @@
 {% block contenuto %}
 <h1>{{ azione }}</h1>
 
-<form id="salva" method="POST">
-  {% csrf_token %} {{ form.as_p }}
+<form method="POST">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-container">
+    <div class="form-label-container">{{ field.label_tag }}</div>
+    <div class="form-input-container"><strong>>>></strong>{{ field }}</div>
+  </div>
+  {% endfor %}
   <button type="submit">Salva</button>
-  <a href="{% url 'lista_libri' %}">Annulla</a>
 </form>
 {% endblock %}

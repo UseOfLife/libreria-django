@@ -3,12 +3,15 @@
 <h1>Crea un account</h1>
 
 <form method="POST">
-  {% csrf_token %} {{ form.as_p }}
-  <div class="button-container">
-    <button type="submit">Registrati</button>
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-container">
+    <div class="form-label-container">{{ field.label_tag }}</div>
+    <div class="form-input-container"><strong>>>></strong>{{ field }}</div>
   </div>
-  
+  {% endfor %}
+  <button type="submit">Registrati</button>
+
 </form>
 
-<p>Hai già un account? <a href="{% url 'login' %}">Accedi</a></p>
 {% endblock %}

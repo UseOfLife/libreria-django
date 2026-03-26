@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block titolo %}Esci{% endblock %}
+{% block contenuto %}
+<h1>Logout</h1>
+<p id="elimina">Sei sicuro di voler uscire?</p>
+
+<form action="{% url 'logout' %}" method="POST">
+  {% csrf_token %}
+  <button type="submit">Sì, esci</button>
+  <a href="/libri/">Annulla</a>
+</form>
+{% endblock %}

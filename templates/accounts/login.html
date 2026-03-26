@@ -3,9 +3,14 @@
 <h1>Accedi</h1>
 
 <form method="POST">
-  {% csrf_token %} {{ form.as_p }}
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-container">
+    <div class="form-label-container">{{ field.label_tag }}</div>
+    <div class="form-input-container"><strong>>>></strong>{{ field }}</div>
+  </div>
+  {% endfor %}
   <button type="submit">Accedi</button>
 </form>
 
-<p>Non hai un account? <a href="{% url 'registrazione' %}">Registrati</a></p>
 {% endblock %}

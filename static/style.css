@@ -6,41 +6,227 @@
     box-sizing: border-box;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    padding: 10px;
-}
-
 body {
-    background-color: rgb(164, 230, 250);
-    color: rgb(0, 0, 0);
+    background-color: black;
+    color: limegreen;
     font-family: "Lakki Reddy", serif;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+    width: 100vw;
+    gap: 10px;
 }
 
-.button-container {
+a {
+    color: limegreen;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: all 0.3 ease-in-out;
+}
+
+nav,
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 10px limegreen;
+    height: max-content;
+}
+
+.opzioni {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    margin-top: 1rem;
+    height: calc(100dvh - 1rem - 100px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+h1 {
+    margin-top: 1rem;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.card {
+    background-color: black;
+    padding: 1rem;
+    border: 1px solid limegreen;
+    border-radius: 10px;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: 300px;
+}
+
+.container-libri {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 0 2rem 0.5rem 2rem;
+    height: 100%;
+}
+
+.info {
+    width: 85%;
+}
+
+.info>p,
+.info>h2 {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(236, 96, 45);
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
+    gap: 0.2rem;
+}
+
+.link-container i {
+    color: white;
+}
+
+.link-container i:hover {
+    color: limegreen;
+    transition: all 0.3 ease-in-out;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    background-color: black;
+    color: limegreen;
+    font-family: "Lakki Reddy", serif;
+    font-size: inherit;
+    padding: 0 0.8rem;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.form-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: none;
+    height: 70px;
+}
+
+.form-input-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid limegreen;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: limegreen;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:hover {
+    background-color: limegreen;
+    transition: all 0.3 ease-in-out;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 button[type="submit"] {
-    background-color: aqua;
-    padding: 10px;
-    border-radius: 50%;
+    background-color: black;
+    color: limegreen;
+    border: 1px solid limegreen;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3 ease-in-out;
 }
 
-button:hover {
-    background-color: bisque;
-    cursor: cell;
+button[type="submit"]:hover {
+    background-color: limegreen;
+    color: black;
+}
+
+p.descrizione {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#elimina {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 3rem 0;
+}
+
+#dettagli-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    font-size: 2rem;
 }
